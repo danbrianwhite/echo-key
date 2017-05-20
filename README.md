@@ -15,3 +15,9 @@ curl (use your ip address)
 ```
 curl 192.168.99.100:9000
 ```
+
+Build standalone for Alpine
+
+```
+docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang sh -c 'CGO_ENABLED=0 GOOS=linux go build -a --installsuffix cgo --ldflags="-s -w" -o echo-key'
+```
